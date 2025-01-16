@@ -94,10 +94,13 @@ Este projeto é um sistema web que utiliza a API do Star Wars como fonte de info
 ## Melhorias Aplicadas
 
 1. **Estruturação em MVC**
-   - Separação clara entre controladores, modelos e views.
+   - Separção clara entre controladores, modelos e views.
 
 2. **Estilização com Bootstrap**
    - Layout moderno e responsivo.
+
+3. **Criação Automática de Tabelas no Banco de Dados**
+   - Implementado um script que verifica a existência das tabelas no banco de dados e as cria automaticamente na primeira execução, garantindo que o sistema funcione sem erros mesmo em instalações iniciais.
 
 ---
 

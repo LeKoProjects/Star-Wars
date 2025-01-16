@@ -1,0 +1,7 @@
+<?php
+return [
+    'host' => 'localhost',
+    'database' => 'star_wars',
+    'username' => 'seu_usuario',
+    'password' => 'sua_senha',
+];

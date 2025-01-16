@@ -1,6 +1,7 @@
 <?php
 
 require_once '../routes.php';
+require_once '../config/setup.php';
 
 // Verifica a URL atual
 $requestUri = strtok($_SERVER['REQUEST_URI'], '?'); // Remove parâmetros
