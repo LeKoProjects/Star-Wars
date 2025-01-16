@@ -8,18 +8,17 @@ Este projeto é um sistema web que utiliza a API do Star Wars como fonte de info
    - Nome, Nº episódio, sinopse, data de lançamento, diretor, produtores, personagens e a idade do filme.
 3. Registro de logs de todas as interações com a API no banco de dados.
 4. Estilo responsivo utilizando Bootstrap.
-5. Requisições dinâmicas com jQuery.
 
 ---
 
 ## Requisitos do Projeto
 - **PHP 7.4+**
 - **MySQL**
-- **Servidor Web** (como Apache ou Nginx)
 - **Navegador Moderno** (com suporte a JavaScript)
 
 ### Requisitos Adicionais
-- A API do Star Wars deve estar acessível na internet.
+- A API do Star Wars utilizada nesse projeto.
+    https://swapi.dev/
 
 ---
 
@@ -27,7 +26,7 @@ Este projeto é um sistema web que utiliza a API do Star Wars como fonte de info
 
 1. Clone o repositório ou extraia os arquivos.
 
-   git clone <URL_DO_REPOSITORIO>(https://github.com/LeKoProjects/Star-Wars.git)
+   git clone (https://github.com/LeKoProjects/Star-Wars.git)
 
 2. Configure o banco de dados:
    - Crie um banco de dados chamado `star_wars`.
@@ -39,7 +38,8 @@ Este projeto é um sistema web que utiliza a API do Star Wars como fonte de info
    SOURCE caminho/para/dump.sql;
    ```
 
-3. Configure as credenciais do banco no arquivo `config/database.php`:
+3. Copie o arquivo `config/database.php.example` para `config/database.php`.
+   Atualize as credenciais no arquivo `config/database.php`.
    ```php
    <?php
    return [
@@ -101,15 +101,6 @@ Este projeto é um sistema web que utiliza a API do Star Wars como fonte de info
 
 3. **Criação Automática de Tabelas no Banco de Dados**
    - Implementado um script que verifica a existência das tabelas no banco de dados e as cria automaticamente na primeira execução, garantindo que o sistema funcione sem erros mesmo em instalações iniciais.
-
----
-
-## Dump do Banco de Dados
-Certifique-se de exportar o banco de dados para um arquivo SQL e colocá-lo na pasta `database/`.
-
-```bash
-mysqldump -u seu_usuario -p star_wars > database/dump.sql
-```
 
 ---
 
