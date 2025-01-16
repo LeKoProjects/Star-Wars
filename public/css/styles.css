@@ -1,0 +1,32 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+.card {
+    background-color: #1e1e1e;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #ffffff;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+.btn-primary {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+}
+.btn-primary:hover {
+    background-color: #e6b800;
+    border-color: #e6b800;
+}
+h1, h2 {
+    font-family: 'Star Jedi', sans-serif;
+}
+@font-face {
+    font-family: 'Star Jedi';
+    src: url('https://fonts.cdnfonts.com/s/12117/Starjedi.ttf') format('truetype');
+}
+ul {
+    color: #ffffff;
+}
