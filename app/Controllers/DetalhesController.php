@@ -33,9 +33,7 @@ class DetalhesController
             $multiCurl[$i] = curl_init();
             curl_setopt($multiCurl[$i], CURLOPT_URL, $characterUrl);
             curl_setopt($multiCurl[$i], CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($multiCurl[$i], CURLOPT_FAILONERROR, true);
-            curl_setopt($multiCurl[$i], CURLOPT_SSL_VERIFYHOST, false);
-            curl_setopt($multiCurl[$i], CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($multiCurl[$i], CURLOPT_CAINFO, 'certs\cacert-2024-12-31.pem');
             curl_multi_add_handle($mh, $multiCurl[$i]);
         }
 
@@ -45,18 +43,7 @@ class DetalhesController
 
         foreach ($multiCurl as $i => $ch) {
             $response = curl_multi_getcontent($ch);
-            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            $error = curl_error($ch);
-
-            if ($httpCode === 200 && !$error) {
-                $results[] = json_decode($response, true);
-            } else {
-                $results[] = [
-                    'error' => $error ?: "HTTP Error $httpCode",
-                    'url' => curl_getinfo($ch, CURLINFO_EFFECTIVE_URL),
-                ];
-            }
-
+            $results[] = json_decode($response, true);
             curl_multi_remove_handle($mh, $ch);
         }
 
